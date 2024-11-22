@@ -54,7 +54,7 @@ function Paste() {
   }
 
   return (
-    <div ref={ref} className="w-full p-4 text-white flex justify-center">
+    <div ref={ref} className="w-full min-h-screen p-4 text-white flex justify-center">
       <h1 className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] text-[13vw] font-semibold leading-none tracking-tight text-zinc-700">Docs.</h1>
 
       <div className="w-full md:w-[85%]">

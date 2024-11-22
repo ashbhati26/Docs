@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Paste from './components/Paste';
 import LocomotiveScroll from 'locomotive-scroll';
+import Footer from './components/Footer';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className='w-full font-["Gilroy"] bg-[#000] min-h-screen overflow-hidden'>
       <RouterProvider router={router} />
+      <Footer />
     </div>
   );
 }
