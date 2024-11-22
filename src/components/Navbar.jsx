@@ -72,7 +72,7 @@ const Navbar = () => {
           <Tab setPosition={setPosition} to="/" exact>
             Home
           </Tab>
-          <Tab setPosition={setPosition} to="/pastes">
+          <Tab setPosition={setPosition} to="/docs">
             Docs
           </Tab>
 
