@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Paste from './components/Paste';
-import ViewPaste from './components/ViewPaste';
 import LocomotiveScroll from 'locomotive-scroll';
 
 const router = createBrowserRouter([
@@ -17,7 +16,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/pastes",
+    path: "/docs",
     element: (
       <>
         <Navbar />
