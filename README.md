@@ -53,12 +53,3 @@ Ensure you have the following installed:
    ```bash
    npm run dev
    ```
-
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-This README now highlights the frontend nature of the app and focuses on the tools and setup needed for a client-side project. Let me know if you need further adjustments!
