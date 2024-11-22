@@ -4,7 +4,6 @@ import { removeFromPastes } from '../redux/pasteSlice';
 import toast from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import { CiEdit } from 'react-icons/ci';
-import { IoEyeOutline } from 'react-icons/io5';
 import { MdDeleteOutline } from 'react-icons/md';
 import { LuCopy } from 'react-icons/lu';
 import { FaShareSquare } from 'react-icons/fa';
@@ -89,12 +88,6 @@ function Paste() {
                     <button className="text-black text-[5vw] md:text-[2vw]">
                       <a href={`/?pasteId=${paste?._id}`}>
                         <CiEdit />
-                      </a>
-                    </button>
-
-                    <button className="text-black text-[4.5vw] md:text-[1.75vw]">
-                      <a href={`/pastes/${paste?._id}`}>
-                        <IoEyeOutline />
                       </a>
                     </button>
 
