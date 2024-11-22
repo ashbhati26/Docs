@@ -11,7 +11,7 @@ A visually engaging, animated notes-taking app built purely with frontend techno
 
 ## Live Demo
 
-Explore the app in action: [Docs.](https://docs-nivn2n6zh-ashish-bhatis-projects.vercel.app/) 
+Explore the app in action: [Docs.](https://docs-ashish-bhatis-projects.vercel.app/) 
 
 ---
 
