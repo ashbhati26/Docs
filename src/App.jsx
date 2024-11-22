@@ -25,15 +25,6 @@ const router = createBrowserRouter([
       </>
     ),
   },
-  {
-    path: "/pastes/:id",
-    element: (
-      <>
-        <Navbar />
-        <ViewPaste />
-      </>
-    ),
-  },
 ]);
 
 const locomotiveScroll = new LocomotiveScroll();
