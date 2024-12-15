@@ -1,33 +1,39 @@
-import { createSlice } from '@reduxjs/toolkit'
-import toast from 'react-hot-toast';
+import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const initialState = {
-  pastes:localStorage.getItem("pastes")
-  ? JSON.parse(localStorage.getItem("pastes"))
-  : []
-}
+  pastes: (() => {
+    try {
+      return JSON.parse(localStorage.getItem("pastes")) || [];
+    } catch {
+      return [];
+    }
+  })(),
+};
 
 export const pasteSlice = createSlice({
-  name: 'paste',
+  name: "paste",
   initialState,
   reducers: {
     addToPastes: (state, action) => {
       const paste = action.payload;
       state.pastes.push(paste);
-      localStorage.setItem("pastes", 
-        JSON.stringify(state.pastes));
-      toast("Paste Created Successfully!")
+      localStorage.setItem("pastes", JSON.stringify(state.pastes));
+      toast("Paste Created Successfully!", {
+        position: "top-right",
+      });
     },
-    
+
     updateToPastes: (state, action) => {
       const paste = action.payload;
-      const index = state.pastes.findIndex((item) =>
-      item._id === paste._id)
-      if(index >= 0){
+      const index = state.pastes.findIndex((item) => item._id === paste._id);
+      if (index >= 0) {
         state.pastes[index] = paste;
-        localStorage.setItem("pastes", JSON.stringify(state.pastes))
+        localStorage.setItem("pastes", JSON.stringify(state.pastes));
 
-        toast.success("Paste updated")
+        toast.success("Paste updated", {
+          position: "top-right",
+        });
       }
     },
 
@@ -41,21 +47,22 @@ export const pasteSlice = createSlice({
       const pasteId = action.payload;
 
       console.log(pasteId);
-      const index = state.pastes.findIndex((item) =>
-      item._id === pasteId);
+      const index = state.pastes.findIndex((item) => item._id === pasteId);
 
-      if(index >= 0){
+      if (index >= 0) {
         state.pastes.splice(index, 1);
 
         localStorage.setItem("pastes", JSON.stringify(state.pastes));
 
-        toast.success("Paste deleted");
+        toast.success("Paste deleted", {
+          position: "top-right",
+        });
       }
     },
   },
-})
+});
 
+export const { addToPastes, updateToPastes, resetAllPastes, removeFromPastes } =
+  pasteSlice.actions;
 
-export const { addToPastes, updateToPastes, resetAllPastes, removeFromPastes} = pasteSlice.actions
-
-export default pasteSlice.reducer
+export default pasteSlice.reducer;
