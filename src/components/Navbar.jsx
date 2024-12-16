@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React, { useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // Tab component for individual navigation links
 const Tab = ({ children, setPosition, to }) => {
@@ -15,19 +15,15 @@ const Tab = ({ children, setPosition, to }) => {
         // Get the width of the tab and update the cursor's position and size
         const { width } = ref.current.getBoundingClientRect();
         setPosition({
-          left: ref.current.offsetLeft, 
+          left: ref.current.offsetLeft,
           width,
           opacity: 1,
         });
       }}
       className="relative z-10 block cursor-pointer px-4 py-2 text-sm uppercase text-white md:px-6 md:py-3 md:text-base"
     >
-      <NavLink 
-        to={to} 
-        className="font-medium"
-        activeClassName="border-b-2 " 
-      >
-        {children} 
+      <NavLink to={to} className="font-medium" activeClassName="border-b-2 ">
+        {children}
       </NavLink>
     </li>
   );
@@ -38,26 +34,25 @@ const Cursor = ({ position }) => {
   return (
     <motion.li
       animate={{
-        left: position.left,     // Animate the cursor's left position
-        width: position.width,   // Animate the cursor's width
-        opacity: position.opacity // Animate the cursor's opacity
+        left: position.left, // Animate the cursor's left position
+        width: position.width, // Animate the cursor's width
+        opacity: position.opacity, // Animate the cursor's opacity
       }}
-      className="absolute z-0 h-8 rounded-full bg-[#ea7a53] md:h-12" 
+      className="absolute z-0 h-8 rounded-full bg-[#ea7a53] md:h-12"
     />
   );
 };
 
-
 const Navbar = () => {
   // State to track the position and size of the active tab's cursor
   const [position, setPosition] = useState({
-    left: 0,      
-    width: 0,     
-    opacity: 0, 
+    left: 0,
+    width: 0,
+    opacity: 0,
   });
 
   return (
-    <div className='flex justify-center'>
+    <div className="flex justify-center">
       <div className="relative border-2 border-[#6c757d] rounded-full py-1 px-3 mt-2 bg-[#000]">
         <ul
           // Set cursor opacity to 0 when mouse leaves the tabs
