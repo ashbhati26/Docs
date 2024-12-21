@@ -1,10 +1,10 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Paste from './components/Paste';
-import LocomotiveScroll from 'locomotive-scroll';
-import Footer from './components/Footer';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Paste from "./components/Paste";
+import LocomotiveScroll from "locomotive-scroll";
+import Footer from "./components/Footer";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,7 @@ const locomotiveScroll = new LocomotiveScroll();
 
 function App() {
   return (
-    <div className='w-full font-["Gilroy"] bg-[#000] min-h-screen overflow-hidden'>
+    <div className='w-full font-["Urbanist"] bg-[#000] min-h-screen overflow-hidden'>
       <RouterProvider router={router} />
       <Footer />
     </div>
